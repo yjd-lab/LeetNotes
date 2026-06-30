@@ -1,0 +1,25 @@
+1.usestate() : allows creation of a statefull variable and a setter function to update its value in virtual dom 
+            cons [name,setName] = usestate("")
+2.useEffect() : tells react to do THIS CODE when (pick one ):
+                - this component re renders
+                - component mounts
+                - state of a value changes
+            useEffect(()=>{code we like to run},[dependencies optional])
+3.props: read only property shared between components. parent can send data to child component
+        <p>Name: {props.name}</p>
+4..map() allows you to iterate directly inside JSX to transform an array of data (like user profiles) into 
+    an array of visible UI components
+5..filter() method creates a new array containing only the elements that pass a specific condition.
+6.onchange(): event handle used primarily with form elements
+            ex: input,textarea,select,radio
+            triggers the function every time the value of the input changes
+7.update "=>" : allows change based on previus state
+8.useNavigate() is a hook from the React Router library that lets you programmatically change pages in your application
+9.event.target.value grabs the exact text currently typed into an input field.
+     It is the standard way to capture user input in real time.
+     Breakdown
+        event: The object containing data about the action (like typing or clicking).
+        target: The specific HTML element that triggered the action (like the <input> tag)..
+        value: The text content inside that input elemen
+10.useSearchParams is a React Router hook used to read and modify the query string in the URL (everything after the ? character, like ?search=shoes&sort=price).It works almost exactly like React's useState, returning an array with the current search parameters and a function to update them.
+11.
