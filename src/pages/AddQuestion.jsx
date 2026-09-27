@@ -36,6 +36,7 @@ function AddQuestion() {
       tags: tags.split(","),
 
       // default values
+      difficulty: difficulty.toLowerCase(),
       status: "easy",
       notes: "",
       solution: "",
