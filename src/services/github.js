@@ -36,3 +36,33 @@ export async function getFileContent(
 
   return text;
 }
+
+export async function getQuestionDifficulty(
+  folderName
+) {
+  const response =
+    await fetch(
+      `https://raw.githubusercontent.com/yjd-lab/DSA-yj-/main/${folderName}/README.md`
+    );
+
+  if (!response.ok) {
+    return null;
+  }
+
+  const readme =
+    await response.text();
+
+  const match =
+    readme.match(
+      /Difficulty:\s*(Easy|Medium|Hard)/i
+    );
+
+  if (!match) {
+    return null;
+  }
+
+  return match[1].toLowerCase();
+}
+
+
+
