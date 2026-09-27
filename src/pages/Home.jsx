@@ -28,7 +28,6 @@ function Home() {
       <button onClick={handleSearch}>
         Search
       </button>
-
     </div>
   );
 }
