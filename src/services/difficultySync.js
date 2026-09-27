@@ -2,6 +2,11 @@ import {
   getQuestionDifficulty,
 } from "./github";
 
+import {
+  getQuestions,
+  saveQuestions,
+} from "../utils/storage";
+
 export async function syncQuestionDifficulty(
   question
 ) {
@@ -15,5 +20,30 @@ export async function syncQuestionDifficulty(
       folderName
     );
 
-  return difficulty;
+  if (!difficulty) {
+    return false;
+  }
+
+  const questions =
+    getQuestions();
+
+  const updatedQuestions =
+    questions.map(
+      (q) => {
+        if (q.id === question.id) {
+          return {
+            ...q,
+            difficulty: difficulty,
+          };
+        }
+
+        return q;
+      }
+    );
+
+  saveQuestions(
+    updatedQuestions
+  );
+
+  return true;
 }
