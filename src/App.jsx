@@ -6,7 +6,7 @@ import Notes from "./pages/Notes";
 import QuestionDetails from "./pages/QuestionDetails";
 import NotesDetails from "./pages/NotesDetails";
 import Navbar from "./components/Navbar";
-
+import RevisionPlanner from "./pages/RevisionPlanner";
 
 function App() {
   return (
@@ -20,7 +20,7 @@ function App() {
         <Route path="/problem/:id" element={<QuestionDetails />} />
         <Route path="/notes/:id" element={<NotesDetails />} />
         <Route path="/add-question" element={<AddQuestion />}/>
-        
+        <Route path="/revision"element={<RevisionPlanner />}/>
         
       </Routes>
     </BrowserRouter>

@@ -63,6 +63,3 @@ export async function getQuestionDifficulty(
 
   return match[1].toLowerCase();
 }
-
-
-

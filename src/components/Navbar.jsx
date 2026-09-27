@@ -19,6 +19,7 @@ function Navbar() {
       >
         <Link to="/problems">Problems</Link>
         <Link to="/notes">Notes</Link>
+        <Link to="/revision">Revision</Link>
         
       </div>
     </nav>
