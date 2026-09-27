@@ -7,7 +7,10 @@ import ReactMarkdown
 import rehypeRaw
   from "rehype-raw";
 
-import { getQuestions } from "../utils/storage";
+import {
+  getQuestions,
+  saveQuestions,
+} from "../utils/storage";
 import {
   getQuestionFiles,
   getFileContent,
@@ -78,6 +81,34 @@ function QuestionDetails() {
           setProblemStatement(
             readme
           );
+
+          const match =
+            readme.match(
+              /Difficulty:\s*(Easy|Medium|Hard)/i
+            );
+
+          if (match) {
+            const difficulty =
+              match[1].toLowerCase();
+
+            const updatedQuestions =
+              questionsData.map(
+                (q) => {
+                  if (q.id === question.id) {
+                    return {
+                      ...q,
+                      difficulty: difficulty,
+                    };
+                  }
+
+                  return q;
+                }
+              );
+
+            saveQuestions(
+              updatedQuestions
+            );
+          }
         }
 
         // find .java file
